@@ -97,6 +97,12 @@ class Parser_Tests: XCTestCase {
 		assertParseSucceeds(parser, [1,1,1,9], result: [1,1,1], consumed: 3)
 	}
 
+  func testZeroOrMoreParserWithEmptyInput () {
+		let parser = zeroOrMore(char("X"))
+		let result = ""
+		assertParseSucceeds(parser, result)
+	}
+
 	func testCountParser () {
 		let parser = count(3, token(1))
 
@@ -113,7 +119,7 @@ class Parser_Tests: XCTestCase {
 		assertParseFails(parser, [2,2])
 		assertParseFails(parser, [])
     }
-    
+
 	func testCountParser0TimesWithoutConsumingInput () {
 		let parser = count(0, token(1))
 
@@ -240,5 +246,6 @@ extension Parser_Tests {
 		("testEofParser", testEofParser),
 		("testParsingAString", testParsingAString),
 		("testParsingAnArray", testParsingAnArray),
+		("testZeroOrMoreParserWithEmptyInput", testZeroOrMoreParserWithEmptyInput),
 		]
 }
