@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'FootlessParser-oleander'
-  s.version      = '2.0.0'
+  s.version      = '2.0.1'
   s.summary      = 'A simple parser combinator written in Swift'
   s.description  = 'FootlessParser is a simple and pretty naive implementation of a parser combinator in Swift. It enables infinite lookahead, non-ambiguous parsing with error reporting.'
   s.homepage     = 'https://github.com/kareman/FootlessParser'
